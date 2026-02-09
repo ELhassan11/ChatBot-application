@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import google.generativeai as genai
 api = os.getenv("GEMINI_API_KEY")
@@ -38,6 +39,7 @@ if user_input :=st.chat_input('Enter Your Text...'):
             message_placeholder.markdown(f'{response_text}')
     #append model response in session state
     st.session_state.messages.append({'role':'assistant','content': response_text})
+
 
 
 
